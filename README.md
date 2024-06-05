@@ -1,5 +1,4 @@
 # Projeto Sistema de Atividades Especiais - GRUPO B
-Repositório do projeto final da disciplina de banco de dados II da UNISATC - 2024
 
 # Integrantes 
 Thiago Duminelli de Almeida - @thiagoalmeiidaaa
