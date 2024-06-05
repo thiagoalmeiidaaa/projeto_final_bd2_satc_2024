@@ -1,6 +1,6 @@
 # Projeto Sistema de Atividades Especiais - GRUPO B
 
-# Integrantes 
+Integrantes 
 Thiago Duminelli de Almeida - @thiagoalmeiidaaa
 Gabriel Tassi Frelo - @gabrielfrello
 Augusto Frello Venturini - @augustoventurini
