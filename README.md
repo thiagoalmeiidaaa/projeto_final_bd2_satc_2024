@@ -1,6 +1,6 @@
 # Projeto Sistema de Atividades Especiais - GRUPO B
 
-<br><h1 align="center">Integrantes</h1>
+<br><h1 align="center">Integrantes</h1><br>
 
 Thiago Duminelli de Almeida - @thiagoalmeiidaaa
 Gabriel Tassi Frelo - @gabrielfrello
