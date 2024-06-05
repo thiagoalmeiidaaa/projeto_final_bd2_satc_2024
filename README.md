@@ -1,6 +1,7 @@
 <h1 align="center"># Projeto Sistema de Atividades Especiais - GRUPO B</h1>
 <br>
-<h1 align="center">Integrantes</h1>
+Integrantes
+<br>
 <br>
 Thiago Duminelli de Almeida - @thiagoalmeiidaaa 
 <br>
