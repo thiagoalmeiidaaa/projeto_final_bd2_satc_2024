@@ -1,4 +1,4 @@
-<h1 align="center"># Projeto Sistema de Conta Digital - GRUPO B</h1>
+<h1 align="center">Projeto Sistema de Conta Digital - GRUPO B</h1>
 
 ### Integrantes
 • Thiago Duminelli de Almeida - @thiagoalmeiidaaa <br>
