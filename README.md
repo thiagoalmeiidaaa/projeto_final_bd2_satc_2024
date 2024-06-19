@@ -16,6 +16,7 @@ Arquivo fonte: [Modelo Fisico.](https://dbdiagram.io/d/666b3fada179551be6d56ac5)
 ### Dicionário de Dados
 As informações sobre as tabelas e índices foram documentados na planilha [Dicionario_De_Dados.xlsx](Dicionario_De_Dados.xlsx).
 
+### Projeto CRUD
 Abaixo, segue os scripts SQL separados por tipo:
 + DDL [ddl.sql](scripts_sql/ddl.sql.txt)
 + Índices [indices.sql](scripts_sql/indices.sql.txt)
@@ -25,4 +26,4 @@ Abaixo, segue os scripts SQL separados por tipo:
 + Functions [functions.sql](scripts_sql/functions.sql.txt)
 
 ### Perguntas de Negócio
-Segue ao lado as 4 perguntas de negócio [Perguntas de Negócio](Perguntas.de.negocio.com.SQL.txt).
+Segue ao lado as 4 perguntas de negócio juntamente com o SQL indexado: [Perguntas de Negócio](Perguntas.de.negocio.com.SQL.txt).
