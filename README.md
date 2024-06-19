@@ -23,3 +23,6 @@ Abaixo, segue os scripts SQL separados por tipo:
 + Triggers [triggers.sql](scripts_sql/triggers.sql.txt)
 + Stored Procedures [stored_procedures.sql](scripts_sql/stored_procedures.sql.txt)
 + Functions [functions.sql](scripts_sql/functions.sql.txt)
+
+### Perguntas de Negócio
+Segue ao lado as 4 perguntas de negócio [Perguntas de Negócio](Perguntas.de.negocio.com.SQL.txt).
