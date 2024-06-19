@@ -1,0 +1,36 @@
+CREATE TRIGGER registrar_historico_login
+AFTER INSERT ON historico_login
+FOR EACH ROW
+BEGIN
+    DECLARE nome_cliente VARCHAR(100);
+    
+    -- Obter o nome do cliente
+    SELECT nome INTO nome_cliente
+    FROM clientes
+    WHERE id_cliente = NEW.id_cliente;
+    
+    -- Registrar o evento
+    INSERT INTO log_eventos (evento)
+    VALUES (CONCAT('Cliente ', nome_cliente, ' realizou login em ', NEW.data_hora_login));
+END
+
+--
+
+CREATE TRIGGER atualizar_status_emprestimo
+BEFORE INSERT ON transacoes
+FOR EACH ROW
+BEGIN
+    DECLARE saldo_origem DECIMAL(15, 2);
+    
+    -- Verificar o saldo da conta de origem
+    SELECT saldo INTO saldo_origem
+    FROM contas
+    WHERE numero_conta = NEW.numero_conta_origem;
+    
+    -- Atualizar o status do empréstimo
+    IF saldo_origem < NEW.valor THEN
+        SET NEW.status_emprestimo = 'Vencido';
+    ELSE
+        SET NEW.status_emprestimo = 'Ativo';
+    END IF;
+END

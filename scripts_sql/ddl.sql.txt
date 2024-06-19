@@ -1,0 +1,71 @@
+create table clientes (
+    id_cliente int primary key auto_increment,
+    nome varchar(100),
+    email varchar(100),
+    senha varchar(50),
+    data_cadastro date
+);
+
+create table contas (
+    numero_conta int primary key auto_increment,
+    id_cliente int,
+    saldo decimal(15, 2),
+    data_abertura date,
+    foreign key (id_cliente) references clientes(id_cliente)
+);
+
+create table cartoescredito (
+    id_cartao int primary key auto_increment,
+    id_cliente int,
+    numero_cartao varchar(16),
+    limite_credito decimal(15, 2),
+    data_vencimento date,
+    foreign key (id_cliente) references clientes(id_cliente)
+);
+
+create table historico_login (
+    id_login int primary key auto_increment,
+    id_cliente int,
+    data_hora_login datetime,
+    foreign key (id_cliente) references clientes(id_cliente)
+);
+
+create table transacoes (
+    id_transacao int primary key auto_increment,
+    numero_conta_origem int,
+    numero_conta_destino int,
+    valor decimal(15, 2),
+    data_transacao datetime,
+    foreign key (numero_conta_origem) references contas(numero_conta),
+    foreign key (numero_conta_destino) references contas(numero_conta)
+);
+
+create table pagamentos_agendados (
+    id_pagamento int primary key auto_increment,
+    id_cliente int,
+    beneficiario_nome varchar(100),
+    numero_conta_beneficiario int,
+    valor decimal(15, 2),
+    data_agendamento date,
+    foreign key (id_cliente) references clientes(id_cliente)
+);
+
+create table extrato (
+    id_extrato int primary key auto_increment,
+    numero_conta int,
+    descricao varchar(255),
+    valor decimal(15, 2),
+    data_hora datetime,
+    foreign key (numero_conta) references contas(numero_conta)
+);
+
+create table emprestimos (
+    id_emprestimo int primary key auto_increment,
+    id_cliente int,
+    montante decimal(15, 2),
+    taxa_juros decimal(5, 2),
+    data_inicio date,
+    data_fim date,
+    status enum('Ativo', 'Pago', 'Vencido'),
+    foreign key (id_cliente) references clientes(id_cliente)
+);

@@ -1,0 +1,33 @@
+CREATE PROCEDURE atualizar_limite_credito(
+    IN p_id_cartao INT,
+    IN p_novo_limite DECIMAL(15, 2)
+)
+BEGIN
+    UPDATE cartoescredito
+    SET limite_credito = p_novo_limite
+    WHERE id_cartao = p_id_cartao;
+END
+
+--
+
+CREATE PROCEDURE cadastrar_cliente_conta(
+    IN p_nome VARCHAR(100),
+    IN p_email VARCHAR(100),
+    IN p_senha VARCHAR(50),
+    IN p_data_cadastro DATE,
+    IN p_saldo DECIMAL(15, 2)
+)
+BEGIN
+    DECLARE novo_id_cliente INT;
+    
+    -- Inserir novo cliente
+    INSERT INTO clientes (nome, email, senha, data_cadastro)
+    VALUES (p_nome, p_email, p_senha, p_data_cadastro);
+    
+    -- Obter o ID do cliente inserido
+    SET novo_id_cliente = LAST_INSERT_ID();
+    
+    -- Abrir uma conta para o novo cliente
+    INSERT INTO contas (id_cliente, saldo, data_abertura)
+    VALUES (novo_id_cliente, p_saldo, CURDATE());
+END

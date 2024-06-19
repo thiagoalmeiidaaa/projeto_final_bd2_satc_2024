@@ -1,0 +1,36 @@
+CREATE INDEX idx_email ON clientes(email);
+CREATE INDEX idx_datacadastro ON Clientes(data_cadastro);
+
+--
+
+CREATE INDEX idx_idcliente_contas ON contas(id_cliente);
+CREATE INDEX idx_dataabertura ON contas(data_abertura);
+
+--
+
+CREATE INDEX idx_datatransacao ON transacoes(data_transacao);
+
+--
+
+CREATE INDEX idx_idcliente_pagamentos ON pagamentos_agendados(id_cliente);
+CREATE INDEX idx_dataagendamento ON pagamentos_agendados(data_agendamento);
+
+--
+
+CREATE INDEX idx_idcliente_cartoes ON cartoes_credito(id_cliente);
+CREATE INDEX idx_datavencimento ON cartoes_credito(data_vencimento);
+
+--
+
+CREATE INDEX idx_datahora_login ON historico_login(data_hora_login);
+
+--
+
+CREATE INDEX idx_numeroconta_extrato ON extrato(numero_conta);
+CREATE INDEX idx_datahora ON extrato(data_hora);
+
+--
+
+CREATE INDEX idx_idcliente_emprestimos ON emprestimos(id_cliente);
+CREATE INDEX idx_datainicio ON emprestimos(data_inicio);
+CREATE INDEX idx_status ON emprestimos(status);

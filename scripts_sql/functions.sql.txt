@@ -1,0 +1,23 @@
+CREATE FUNCTION calcular_saldo_total(id_cliente_param INT) RETURNS DECIMAL(15, 2)
+BEGIN
+    DECLARE saldo_total DECIMAL(15, 2);
+    
+    SELECT SUM(saldo) INTO saldo_total
+    FROM contas
+    WHERE id_cliente = id_cliente_param;
+    
+    RETURN saldo_total;
+END
+
+--
+
+CREATE FUNCTION buscar_nome_cliente(id_cliente_param INT) RETURNS VARCHAR(100)
+BEGIN
+    DECLARE nome_cliente VARCHAR(100);
+    
+    SELECT nome INTO nome_cliente
+    FROM clientes
+    WHERE id_cliente = id_cliente_param;
+    
+    RETURN nome_cliente;
+END
