@@ -1,0 +1,48 @@
+-- Pergunta de Negócio 1: Qual é o saldo atual de um cliente específico?
+
+-- Criar um índice na coluna IDCliente da tabela Contas para otimização de busca
+CREATE INDEX idx_contas_idcliente ON Contas (IDCliente);
+
+-- Consulta para obter o saldo atual de um cliente específico
+SELECT SUM(Saldo) AS SaldoAtual
+FROM Contas
+WHERE IDCliente = 1; -- ID do cliente desejado
+
+----------------------------------------------------------------------------------------
+
+-- Pergunta de Negócio 2: Quantos pagamentos agendados existem para um cliente até uma determinada data?
+
+-- Criar um índice na coluna IDCliente da tabela PagamentosAgendados para otimização de busca
+CREATE INDEX idx_pagamentos_agendados_idcliente ON PagamentosAgendados (IDCliente);
+
+-- Consulta para contar os pagamentos agendados para um cliente até uma data específica
+SELECT COUNT(*) AS QuantidadePagamentosAgendados
+FROM PagamentosAgendados
+WHERE IDCliente = 1 -- ID do cliente desejado
+AND DataAgendamento <= '2024-06-30'; -- Data limite desejada
+
+----------------------------------------------------------------------------------------
+
+-- Pergunta de Negócio 3: Qual é o extrato de transações de uma conta específica em um intervalo de datas?
+
+-- Criar um índice na coluna NumeroConta da tabela Transacoes para otimização de busca
+CREATE INDEX idx_transacoes_numeroconta ON Transacoes (NumeroConta);
+
+-- Consulta para obter o extrato de transações de uma conta em um intervalo de datas
+SELECT *
+FROM Transacoes
+WHERE NumeroContaOrigem = 1 -- Número da conta desejada
+AND DataTransacao BETWEEN '2024-06-01' AND '2024-06-30'; -- Intervalo de datas desejado
+
+----------------------------------------------------------------------------------------
+
+Pergunta de Negócio 4: Quais são os empréstimos ativos de um cliente específico?
+
+-- Criar um índice na coluna IDCliente da tabela Emprestimos para otimização de busca
+CREATE INDEX idx_emprestimos_idcliente ON Emprestimos (IDCliente);
+
+-- Consulta para obter os empréstimos ativos de um cliente específico
+SELECT *
+FROM Emprestimos
+WHERE IDCliente = 1 -- ID do cliente desejado
+AND Status = 'Ativo';
