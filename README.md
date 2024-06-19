@@ -27,3 +27,6 @@ Abaixo, segue os scripts SQL separados por tipo:
 
 ### Perguntas de Negócio
 Segue ao lado as 4 perguntas de negócio juntamente com o SQL indexado: [Perguntas de Negócio](Perguntas.de.negocio.com.SQL.txt).
+
+### Relatório Final
+O relatório final está disponível no arquivo [template1.docx](relatorio/template1.docx).
