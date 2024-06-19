@@ -1,77 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>conta</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel</title>
     <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #b2dbff;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
 
-        header{
-            align-items: center;
-            font-family:Arial, Helvetica, sans-serif ;
-            font-size:25px;
-        }
-        body{ 
-            background-color:#9ecff1;
-            font-family:Arial, Helvetica, sans-serif;
-            
-        }
-        .div{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 20px;
-            gap:5px;
-            padding-top: 30px; 
-        }
+      header {
+        font-size: 25px;
+        margin-bottom: 20px;
+        color: #007bff;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
 
-        .mostrar{
-            font-size: 15px;
-            border-radius: 6px;
-            border-color: rgb(213, 232, 250); 
-        }
+      .div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        padding-top: 30px;
+      }
 
-        .cartao{
-            font-size: 15px;
-            border-radius: 6px;
-            border-color: rgb(213, 232, 250); 
-        }
-        .tran{
-            font-size: 15px;
-            border-radius: 6px;
-            border-color: rgb(213, 232, 250)  
-            
-        }
+      .div button {
+        font-size: 15px;
+        border-radius: 6px;
+        border: 1px solid rgb(213, 232, 250);
+        background-color: #ffffff;
+        padding: 10px 15px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
 
+      .div button:hover {
+        background-color: #007bff;
+        color: #ffffff;
+      }
 
-        a{
-            text-decoration: none;
-            color:black;
-        }
+      a {
+        text-decoration: none;
+        color: #007bff;
+        display: block;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
 
-
-        .emp{
-            font-size: 15px;
-            border-radius: 6px;
-            border-color: rgb(213, 232, 250)  
-        }
-
-
+      a:hover {
+        color: #0056b3;
+      }
     </style>
-</head>
-<body>
-    
-    <header>nome do banco</header>
-    <div class=div><button class="mostrar">Mostrar saldo conta corrente</button>
-        <button class="cartao">cartões</button>
-        <button class="tran"><a href="transacoes.html">transações</a></button>
-        <button class="emp">empréstimos</button>
+  </head>
+  <body>
+    <header>Nome do Banco</header>
+    <div class="div">
+      <button>Mostrar saldo conta corrente</button>
+      <button>Cartões</button>
+      <button><a href="transacoes.html">Transações</a></button>
+      <button>Empréstimos</button>
     </div>
-    
-    
-
     <p>
-        <a href="logout.php">Sair</a>
+    <a href="logout.php">Sair</a>
     </p>
-</body>
+  </body>
 </html>
