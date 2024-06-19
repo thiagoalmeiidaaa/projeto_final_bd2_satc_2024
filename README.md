@@ -17,9 +17,9 @@ Arquivo fonte: [Modelo Fisico.](https://dbdiagram.io/d/666b3fada179551be6d56ac5)
 As informações sobre as tabelas e índices foram documentados na planilha [template1.xlsx](dicionario_dados/template1.xlsx).
 
 Abaixo, segue os scripts SQL separados por tipo:
-+ DDL [ddl.sql](scripts_sql/ddl.sql)
-+ Índices [indices.sql](scripts_sql/indices.sql)
-+ DML [dml.sql](scripts_sql/dml.sql)
-+ Triggers [triggers.sql](scripts_sql/triggers.sql)
-+ Stored Procedures [stored_procedures.sql](scripts_sql/stored_procedures.sql)
-+ Functions [functions.sql](scripts_sql/functions.sql)
++ DDL [ddl.sql](scripts_sql/ddl.sql.txt)
++ Índices [indices.sql](scripts_sql/indices.sql.txt)
++ DML [dml.sql](scripts_sql/dml.sql.txt)
++ Triggers [triggers.sql](scripts_sql/triggers.sql.txt)
++ Stored Procedures [stored_procedures.sql](scripts_sql/stored_procedures.sql.txt)
++ Functions [functions.sql](scripts_sql/functions.sql.txt)
