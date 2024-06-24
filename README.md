@@ -8,15 +8,16 @@
 • Larissa de Mattia Maximiano - [@LarissaDeMattia](https://github.com/LarissaDeMattia) <br>
 • Gabriel Custodio Boelter - [@GabrielBoelter](https://github.com/GabrielBoelter)
 
-Utilizamos a ferramenta de modelagem de dados [dbdiagram.io](https://dbdiagram.io/) para criação do modelo físico do banco de dados.
+Utilizamos a ferramenta de modelagem de dados [dbdiagram.io](https://dbdiagram.io/) para criação do modelo físico do banco de dados.<br>
 Arquivo fonte: [Modelo Fisico.](https://dbdiagram.io/d/666b3fada179551be6d56ac5)
 
 ![image](https://github.com/thiagoalmeiidaaa/projeto_final_bd2_satc_2024/blob/main/modelo_fisico/modelo_er.png?raw=true)
 
 ### Dicionário de Dados
-As informações sobre as tabelas e índices foram documentados na planilha [Dicionário de dados](https://github.com/thiagoalmeiidaaa/projeto_final_bd2_satc_2024/blob/main/Dicionario%20De%20Dados/Dicionario_De_Dados.xlsx).
+Para este projeto foi utilizado o banco de dados [PHP](https://www.php.net).<br>
+As informações sobre as tabelas e índices criados foram documentados na planilha do nosso [Dicionário de dados](https://github.com/thiagoalmeiidaaa/projeto_final_bd2_satc_2024/blob/8d6c43737cc977175b73d9212ca39c5bc89515aa/dicionario_dados/template1.xlsx).
 
-### Projeto CRUD
+### Scripts SQL
 Abaixo, segue os scripts SQL separados por tipo:
 + DDL [ddl.sql](scripts_sql/ddl.sql.txt)
 + Índices [indices.sql](scripts_sql/indices.sql.txt)
@@ -25,8 +26,12 @@ Abaixo, segue os scripts SQL separados por tipo:
 + Stored Procedures [stored_procedures.sql](scripts_sql/stored_procedures.sql.txt)
 + Functions [functions.sql](scripts_sql/functions.sql.txt)
 
-### Perguntas de Negócio
-Segue ao lado as 4 perguntas de negócio juntamente com o SQL indexado: [Perguntas de Negócio](https://github.com/thiagoalmeiidaaa/projeto_final_bd2_satc_2024/tree/1f74a3de1d3da55dc891dac57a4dd70e4cb09c41/relatorio).
+### Código Fonte do CRUD
+• <br>
+• <br>
+• <br>
+
+[Codigo Fonte]
 
 ### Relatório Final
-O relatório final está disponível no arquivo [template1.docx](https://github.com/thiagoalmeiidaaa/projeto_final_bd2_satc_2024/blob/1f74a3de1d3da55dc891dac57a4dd70e4cb09c41/relatorio/template1.docx).
+O relatório final está disponível no arquivo do [Relatório Final](https://github.com/thiagoalmeiidaaa/projeto_final_bd2_satc_2024/blob/1f74a3de1d3da55dc891dac57a4dd70e4cb09c41/relatorio/template1.docx).
