@@ -26,7 +26,7 @@ Abaixo, segue os scripts SQL separados por tipo:
 + Functions [functions.sql](scripts_sql/functions.sql.txt)
 
 ### Perguntas de Negócio
-Segue ao lado as 4 perguntas de negócio juntamente com o SQL indexado: [Perguntas de Negócio](Perguntas.de.negocio.com.SQL.txt).
+Segue ao lado as 4 perguntas de negócio juntamente com o SQL indexado: [Perguntas de Negócio](https://github.com/thiagoalmeiidaaa/projeto_final_bd2_satc_2024/tree/1f74a3de1d3da55dc891dac57a4dd70e4cb09c41/relatorio).
 
 ### Relatório Final
 O relatório final está disponível no arquivo [template1.docx](https://github.com/thiagoalmeiidaaa/projeto_final_bd2_satc_2024/blob/1f74a3de1d3da55dc891dac57a4dd70e4cb09c41/relatorio/template1.docx).
