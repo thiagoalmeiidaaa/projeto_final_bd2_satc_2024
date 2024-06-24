@@ -11,7 +11,7 @@
 Utilizamos a ferramenta de modelagem de dados [dbdiagram.io](https://dbdiagram.io/) para criação do modelo físico do banco de dados.
 Arquivo fonte: [Modelo Fisico.](https://dbdiagram.io/d/666b3fada179551be6d56ac5)
 
-![image]([https://github.com/thiagoalmeiidaaa/projeto_final_bd2_satc_2024/blob/main/Modelo%20F%C3%ADsico/Modelo%20F%C3%ADsico.png?raw=true](https://github.com/thiagoalmeiidaaa/projeto_final_bd2_satc_2024/blob/main/modelo_fisico/modelo_er.png))
+![image](https://github.com/thiagoalmeiidaaa/projeto_final_bd2_satc_2024/blob/main/modelo_fisico/modelo_er.png?raw=true)
 
 ### Dicionário de Dados
 As informações sobre as tabelas e índices foram documentados na planilha [Dicionário de dados](https://github.com/thiagoalmeiidaaa/projeto_final_bd2_satc_2024/blob/main/Dicionario%20De%20Dados/Dicionario_De_Dados.xlsx).
