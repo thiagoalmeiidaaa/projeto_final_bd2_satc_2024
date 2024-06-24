@@ -29,4 +29,4 @@ Abaixo, segue os scripts SQL separados por tipo:
 Segue ao lado as 4 perguntas de negócio juntamente com o SQL indexado: [Perguntas de Negócio](Perguntas.de.negocio.com.SQL.txt).
 
 ### Relatório Final
-O relatório final está disponível no arquivo [template1.docx](relatorio/template1.docx).
+O relatório final está disponível no arquivo [template1.docx]([relatorio/template1.docx](https://github.com/thiagoalmeiidaaa/projeto_final_bd2_satc_2024/blob/main/relatorio/template1.docx)).
