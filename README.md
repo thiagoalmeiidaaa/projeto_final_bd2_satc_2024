@@ -9,9 +9,9 @@
 • Gabriel Custodio Boelter - [@GabrielBoelter](https://github.com/GabrielBoelter)
 
 Utilizamos a ferramenta de modelagem de dados [dbdiagram.io](https://dbdiagram.io/) para criação do modelo físico do banco de dados.<br>
-Arquivo fonte: [Modelo Fisico.](https://dbdiagram.io/d/667a2b499939893dae27deed)
+Arquivo fonte: [Modelo Fisico.](https://dbdiagram.io/d/Banco-Digital-667b130e9939893dae3f3d4c)
 
-![image](https://github.com/thiagoalmeiidaaa/projeto_final_bd2_satc_2024/blob/04e513faa9a8431e70c9bfe64e6295e85d4598a5/modelo_fisico/modelo_er.png)
+![image](https://github.com/thiagoalmeiidaaa/projeto_final_bd2_satc_2024/blob/main/modelo_fisico/modelo_er.png)
 
 ### Dicionário de Dados
 Para este projeto foi utilizado o banco de dados [PHP](https://www.php.net).<br>
@@ -32,7 +32,7 @@ Abaixo, segue os scripts SQL separados por tipo:
 • Projeto: Aplicação Web em PHP <br>
 • Biblioteca para Banco de Dados: MySQLi <br>
 
-[Codigo Fonte]
+[Codigo Fonte](https://github.com/thiagoalmeiidaaa/projeto_final_bd2_satc_2024/tree/cd1d45c642c1314ff1a15ccc7765ef142b635eeb/app)
 
 ### Relatório Final
 O relatório final está disponível no arquivo do [Relatório Final](https://github.com/thiagoalmeiidaaa/projeto_final_bd2_satc_2024/blob/1f74a3de1d3da55dc891dac57a4dd70e4cb09c41/relatorio/template1.docx).
