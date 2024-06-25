@@ -17,8 +17,8 @@ CREATE INDEX idx_dataagendamento ON pagamentos_agendados(data_agendamento);
 
 --
 
-CREATE INDEX idx_idcliente_cartoes ON cartoes_credito(id_cliente);
-CREATE INDEX idx_datavencimento ON cartoes_credito(data_vencimento);
+CREATE INDEX idx_idcliente_cartoes ON cartoescredito(id_cliente);
+CREATE INDEX idx_datavencimento ON cartoescredito(data_vencimento);
 
 --
 
