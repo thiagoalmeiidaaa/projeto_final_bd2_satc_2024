@@ -1,3 +1,5 @@
+DELIMITER //
+
 CREATE TRIGGER registrar_historico_login
 AFTER INSERT ON historico_login
 FOR EACH ROW
@@ -12,9 +14,14 @@ BEGIN
     -- Registrar o evento
     INSERT INTO log_eventos (evento)
     VALUES (CONCAT('Cliente ', nome_cliente, ' realizou login em ', NEW.data_hora_login));
-END
+END//
+
+DELIMITER ;
+
 
 --
+
+DELIMITER //
 
 CREATE TRIGGER atualizar_status_emprestimo
 BEFORE INSERT ON transacoes
@@ -33,4 +40,6 @@ BEGIN
     ELSE
         SET NEW.status_emprestimo = 'Ativo';
     END IF;
-END
+END//
+
+DELIMITER ;
