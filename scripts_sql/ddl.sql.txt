@@ -7,7 +7,7 @@ create table clientes (
 );
 
 create table contas (
-    numero_conta int primary key auto_increment,
+    numero_conta int,
     id_cliente int,
     saldo decimal(15, 2),
     data_abertura date,
