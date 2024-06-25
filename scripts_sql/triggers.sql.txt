@@ -1,23 +1,21 @@
 DELIMITER //
 
-CREATE TRIGGER registrar_historico_login
-AFTER INSERT ON historico_login
+CREATE TRIGGER registrar_modificacao_contas
+AFTER UPDATE ON contas
 FOR EACH ROW
 BEGIN
-    DECLARE nome_cliente VARCHAR(100);
+    DECLARE acao VARCHAR(255);
     
-    -- Obter o nome do cliente
-    SELECT nome INTO nome_cliente
-    FROM clientes
-    WHERE id_cliente = NEW.id_cliente;
+    -- Verifica se houve modificação nas colunas relevantes
+    IF OLD.saldo <> NEW.saldo THEN
+        SET acao = CONCAT('Saldo da conta ', OLD.numero_conta, ' alterado de ', OLD.saldo, ' para ', NEW.saldo);
+        INSERT INTO log_modificacoes (tabela, coluna_afetada, acao, data_hora)
+        VALUES ('contas', 'saldo', acao, NOW());
+    END IF;
     
-    -- Registrar o evento
-    INSERT INTO log_eventos (evento)
-    VALUES (CONCAT('Cliente ', nome_cliente, ' realizou login em ', NEW.data_hora_login));
 END//
 
 DELIMITER ;
-
 
 --
 
