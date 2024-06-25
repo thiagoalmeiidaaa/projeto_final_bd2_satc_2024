@@ -1,3 +1,5 @@
+DELIMITER //
+
 CREATE FUNCTION calcular_saldo_total(id_cliente_param INT) RETURNS DECIMAL(15, 2)
 BEGIN
     DECLARE saldo_total DECIMAL(15, 2);
@@ -7,9 +9,11 @@ BEGIN
     WHERE id_cliente = id_cliente_param;
     
     RETURN saldo_total;
-END
+END//
 
---
+DELIMITER ;
+
+DELIMITER //
 
 CREATE FUNCTION buscar_nome_cliente(id_cliente_param INT) RETURNS VARCHAR(100)
 BEGIN
@@ -20,4 +24,6 @@ BEGIN
     WHERE id_cliente = id_cliente_param;
     
     RETURN nome_cliente;
-END
+END//
+
+DELIMITER ;
