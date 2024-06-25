@@ -23,23 +23,17 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE TRIGGER atualizar_status_emprestimo
-BEFORE INSERT ON transacoes
+CREATE TRIGGER registrar_modificacao_historico_login
+AFTER INSERT ON historico_login
 FOR EACH ROW
 BEGIN
-    DECLARE saldo_origem DECIMAL(15, 2);
+    DECLARE acao VARCHAR(100);
     
-    -- Verificar o saldo da conta de origem
-    SELECT saldo INTO saldo_origem
-    FROM contas
-    WHERE numero_conta = NEW.numero_conta_origem;
+    -- Registrar o evento de login
+    SET acao = CONCAT('Cliente ', NEW.id_cliente, ' realizou login em ', NEW.data_hora_login);
+    INSERT INTO log_modificacoes (tabela, coluna_afetada, acao, data_hora)
+    VALUES ('historico_login', NULL, acao, NOW());
     
-    -- Atualizar o status do empréstimo
-    IF saldo_origem < NEW.valor THEN
-        SET NEW.status_emprestimo = 'Vencido';
-    ELSE
-        SET NEW.status_emprestimo = 'Ativo';
-    END IF;
 END//
 
 DELIMITER ;
