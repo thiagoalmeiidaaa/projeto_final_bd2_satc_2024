@@ -9,9 +9,9 @@
 • Gabriel Custodio Boelter - [@GabrielBoelter](https://github.com/GabrielBoelter)
 
 Utilizamos a ferramenta de modelagem de dados [dbdiagram.io](https://dbdiagram.io/) para criação do modelo físico do banco de dados.<br>
-Arquivo fonte: [Modelo Fisico.](https://dbdiagram.io/d/666b3fada179551be6d56ac5)
+Arquivo fonte: [Modelo Fisico.](https://dbdiagram.io/d/667a2b499939893dae27deed)
 
-![image](https://github.com/thiagoalmeiidaaa/projeto_final_bd2_satc_2024/blob/main/modelo_fisico/modelo_er.png?raw=true)
+![image](https://github.com/thiagoalmeiidaaa/projeto_final_bd2_satc_2024/blob/04e513faa9a8431e70c9bfe64e6295e85d4598a5/modelo_fisico/modelo_er.png)
 
 ### Dicionário de Dados
 Para este projeto foi utilizado o banco de dados [PHP](https://www.php.net).<br>
