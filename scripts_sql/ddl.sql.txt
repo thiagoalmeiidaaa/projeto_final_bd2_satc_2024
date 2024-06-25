@@ -69,3 +69,18 @@ create table emprestimos (
     status enum('Ativo', 'Pago', 'Vencido'),
     foreign key (id_cliente) references clientes(id_cliente)
 );
+
+CREATE TABLE log_eventos (
+    id_evento INT PRIMARY KEY AUTO_INCREMENT,
+    evento VARCHAR(255),
+    data_hora DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE log_modificacoes (
+    id_modificacao INT PRIMARY KEY AUTO_INCREMENT,
+    tabela VARCHAR(50),
+    coluna_afetada VARCHAR(50),
+    acao VARCHAR(255),
+    data_hora DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
