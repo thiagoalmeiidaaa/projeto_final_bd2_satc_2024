@@ -27,9 +27,10 @@ Abaixo, segue os scripts SQL separados por tipo:
 + Functions [functions.sql](scripts_sql/functions.sql.txt)
 
 ### Código Fonte do CRUD
-• <br>
-• <br>
-• <br>
+• Linguagem de Programação: PHP <br>
+• Framework: Nenhum (PHP nativo) <br>
+• Projeto: Aplicação Web em PHP <br>
+• Biblioteca para Banco de Dados: MySQLi <br>
 
 [Codigo Fonte]
 
