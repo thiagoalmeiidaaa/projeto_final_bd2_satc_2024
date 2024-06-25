@@ -23,12 +23,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id_cliente = $_SESSION['id_cliente'];
 
     // Recupera o número da conta de origem do cliente logado
-    $sql_conta_origem = "SELECT numero_conta FROM contas WHERE id_cliente = $id_cliente";
+    $sql_conta_origem = "SELECT numero_conta, saldo FROM contas WHERE id_cliente = $id_cliente";
     $result_conta_origem = $mysqli->query($sql_conta_origem);
 
     if ($result_conta_origem->num_rows > 0) {
         $row_conta_origem = $result_conta_origem->fetch_assoc();
         $numero_conta_origem = $row_conta_origem['numero_conta'];
+        $saldo_conta_origem = $row_conta_origem['saldo'];
 
         // Verifica se as contas são diferentes
         if ($numero_conta_origem === $numero_conta_destino) {
@@ -41,44 +42,49 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($result_conta_destino->num_rows === 0) {
                 echo '<div class="message error">Conta de destino não encontrada.</div>';
             } else {
-                // Inicia uma transação SQL
-                $mysqli->begin_transaction();
-
-                // Insere a transação na tabela de transações
-                $sql_insert = "INSERT INTO transacoes (numero_conta_origem, numero_conta_destino, valor, data_transacao)
-                               VALUES (?, ?, ?, NOW())";
-                $stmt_insert = $mysqli->prepare($sql_insert);
-                $stmt_insert->bind_param("sss", $numero_conta_origem, $numero_conta_destino, $valor);
-
-                // Atualiza o saldo da conta de origem
-                $sql_update_origem = "UPDATE contas SET saldo = saldo - ? WHERE numero_conta = ?";
-                $stmt_update_origem = $mysqli->prepare($sql_update_origem);
-                $stmt_update_origem->bind_param("ss", $valor, $numero_conta_origem);
-
-                // Atualiza o saldo da conta de destino
-                $sql_update_destino = "UPDATE contas SET saldo = saldo + ? WHERE numero_conta = ?";
-                $stmt_update_destino = $mysqli->prepare($sql_update_destino);
-                $stmt_update_destino->bind_param("ss", $valor, $numero_conta_destino);
-
-                // Executa as operações dentro da transação
-                $transacao_ok = true;
-
-                $transacao_ok = $transacao_ok && $stmt_insert->execute();
-                $transacao_ok = $transacao_ok && $stmt_update_origem->execute();
-                $transacao_ok = $transacao_ok && $stmt_update_destino->execute();
-
-                if ($transacao_ok) {
-                    // Finaliza a transação
-                    $mysqli->commit();
-
-                    // Redireciona para evitar o reenvio do formulário
-                    header("Location: transacoes.php");
-                    exit;
+                // Verifica se o saldo é suficiente para a transação
+                if ($saldo_conta_origem < $valor) {
+                    echo '<div class="message error">Saldo insuficiente para realizar a transação.</div>';
                 } else {
-                    // Rollback em caso de erro na transação
-                    $mysqli->rollback();
+                    // Inicia uma transação SQL
+                    $mysqli->begin_transaction();
 
-                    echo '<div class="message error">Falha ao realizar a transação.</div>';
+                    // Insere a transação na tabela de transações
+                    $sql_insert = "INSERT INTO transacoes (numero_conta_origem, numero_conta_destino, valor, data_transacao)
+                                   VALUES (?, ?, ?, NOW())";
+                    $stmt_insert = $mysqli->prepare($sql_insert);
+                    $stmt_insert->bind_param("sss", $numero_conta_origem, $numero_conta_destino, $valor);
+
+                    // Atualiza o saldo da conta de origem
+                    $sql_update_origem = "UPDATE contas SET saldo = saldo - ? WHERE numero_conta = ?";
+                    $stmt_update_origem = $mysqli->prepare($sql_update_origem);
+                    $stmt_update_origem->bind_param("ss", $valor, $numero_conta_origem);
+
+                    // Atualiza o saldo da conta de destino
+                    $sql_update_destino = "UPDATE contas SET saldo = saldo + ? WHERE numero_conta = ?";
+                    $stmt_update_destino = $mysqli->prepare($sql_update_destino);
+                    $stmt_update_destino->bind_param("ss", $valor, $numero_conta_destino);
+
+                    // Executa as operações dentro da transação
+                    $transacao_ok = true;
+
+                    $transacao_ok = $transacao_ok && $stmt_insert->execute();
+                    $transacao_ok = $transacao_ok && $stmt_update_origem->execute();
+                    $transacao_ok = $transacao_ok && $stmt_update_destino->execute();
+
+                    if ($transacao_ok) {
+                        // Finaliza a transação
+                        $mysqli->commit();
+
+                        // Redireciona para evitar o reenvio do formulário
+                        header("Location: transacoes.php");
+                        exit;
+                    } else {
+                        // Rollback em caso de erro na transação
+                        $mysqli->rollback();
+
+                        echo '<div class="message error">Falha ao realizar a transação.</div>';
+                    }
                 }
             }
         }
